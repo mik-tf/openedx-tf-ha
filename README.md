@@ -93,7 +93,6 @@ Before proceeding, ensure you have the following:
     ```bash
     sudo mkdir -p /etc/wireguard
     sudo nano /etc/wireguard/tfgrid.conf
-    # Paste wg_config output from opentofu
     sudo wg-quick up tfgrid
     ```
     
