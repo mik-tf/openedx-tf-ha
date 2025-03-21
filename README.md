@@ -93,14 +93,15 @@ Before proceeding, ensure you have the following:
     ```bash
     sudo mkdir -p /etc/wireguard
     sudo nano /etc/wireguard/tfgrid.conf
-    sudo wg-quick up tfgrid
+    wg-quick up tfgrid
     ```
     
 4. **Install Kubernetes**:
-   - Use the `k8s-ha.sh` script to set up the Kubernetes cluster on each node:
+   - Use the `k8s-ha.sh` script to set up the Kubernetes cluster on each node. For each node, set a unique hostname (e.g. node-1, node-2, node-3).
      ```bash
      scp ../scripts/k8s-ha.sh root@<node_ip>:/root/
      ssh root@<node_ip>
+     hostnamectl set-hostname k8s-node-X
      bash k8s-ha.sh
      ```
 

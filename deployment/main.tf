@@ -26,7 +26,7 @@ variable "tfnodeid3" {
   type = string
 }
 
-variable "size" {
+variable "storage" {
   type = string
 }
 
@@ -57,8 +57,8 @@ resource "grid_network" "net1" {
 
 resource "grid_deployment" "d1" {
   disks {
-    name = "disk1"
-    size = var.size
+    name = "basedisk"
+    size = var.storage
   }
   name         = local.name
   node         = var.tfnodeid1
@@ -68,8 +68,8 @@ resource "grid_deployment" "d1" {
     flist = "https://hub.grid.tf/tf-official-vms/ubuntu-24.04-full.flist"
     cpu   = var.cpu
     mounts {
-        name = "disk1"
-        mount_point = "/disk1"
+        name = "basedisk"
+        mount_point = "/basedisk"
     }
     memory     = var.memory
     entrypoint = "/sbin/zinit init"
@@ -82,8 +82,8 @@ resource "grid_deployment" "d1" {
 
 resource "grid_deployment" "d2" {
   disks {
-    name = "disk2"
-    size = var.size
+    name = "basedisk"
+    size = var.storage
   }
   name         = local.name
   node         = var.tfnodeid2
@@ -94,8 +94,8 @@ resource "grid_deployment" "d2" {
     flist      = "https://hub.grid.tf/tf-official-vms/ubuntu-24.04-full.flist"
     cpu        = var.cpu
     mounts {
-        name = "disk2"
-        mount_point = "/disk2"
+        name = "basedisk"
+        mount_point = "/basedisk"
     }
     memory     = var.memory
     entrypoint = "/sbin/zinit init"
@@ -108,8 +108,8 @@ resource "grid_deployment" "d2" {
 
 resource "grid_deployment" "d3" {
   disks {
-    name = "disk3"
-    size = var.size
+    name = "basedisk"
+    size = var.storage
   }
   name         = local.name
   node         = var.tfnodeid3
@@ -120,8 +120,8 @@ resource "grid_deployment" "d3" {
     flist      = "https://hub.grid.tf/tf-official-vms/ubuntu-24.04-full.flist"
     cpu        = var.cpu
     mounts {
-        name = "disk3"
-        mount_point = "/disk3"
+        name = "basedisk"
+        mount_point = "/basedisk"
     }
     memory     = var.memory
     entrypoint = "/sbin/zinit init"
