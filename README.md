@@ -91,8 +91,8 @@ Before proceeding, ensure you have the following:
    - Copy the WireGuard configuration from the OpenTofu output.
    - Save it to `/etc/wireguard/tfgrid.conf` and start the interface:
     ```bash
-    sudo mkdir -p /usr/local/etc/wireguard
-    sudo nano /usr/local/etc/wireguard/tfgrid.conf
+    sudo mkdir -p /etc/wireguard
+    sudo nano /etc/wireguard/tfgrid.conf
     # Paste wg_config output from opentofu
     sudo wg-quick up tfgrid
     ```
