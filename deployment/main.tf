@@ -77,6 +77,7 @@ resource "grid_deployment" "d1" {
       SSH_KEY = var.SSH_KEY
     }
     publicip   = true
+    rootfs_size = 10240
   }
 }
 
@@ -103,6 +104,7 @@ resource "grid_deployment" "d2" {
       SSH_KEY = var.SSH_KEY
     }
     publicip   = true
+    rootfs_size = 10240
   }
 }
 
@@ -129,6 +131,7 @@ resource "grid_deployment" "d3" {
       SSH_KEY = var.SSH_KEY
     }
     publicip   = true
+    rootfs_size = 10240
   }
 }
 
